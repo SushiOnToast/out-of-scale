@@ -17,6 +17,11 @@ size = Vector2(359, 20)
 
 [node name="Level" type="Node2D" unique_id=1164888761]
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=861069337]
+offset_right = 322.0
+offset_bottom = 184.0
+color = Color(0, 0, 0, 1)
+
 [node name="Borders" type="StaticBody2D" parent="." unique_id=2046444164]
 collision_mask = 0
 
