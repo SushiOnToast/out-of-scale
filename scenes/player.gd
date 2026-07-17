@@ -17,11 +17,11 @@ func get_input():
 		
 	if Input.is_action_just_released("grab") and hover_item:
 		if current_item:
+			current_item.active = false
 			current_item = null
-			print("item dropped")
 		else:
-			print("grabbed item")
 			current_item = hover_item
+			current_item.active = true
 
 func _process(_delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
