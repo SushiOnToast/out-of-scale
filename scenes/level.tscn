@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cyswt4o4g6uy"]
+
+[ext_resource type="PackedScene" uid="uid://xftl8kd7g1af" path="res://scenes/player.tscn" id="1_2q6dc"]
+[ext_resource type="PackedScene" uid="uid://b33cpfnk54xc1" path="res://scenes/tool.tscn" id="2_w7c3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5hc8"]
+size = Vector2(20, 748)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8w55"]
+size = Vector2(1300, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgl56"]
+size = Vector2(20, 748)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdi5o"]
+size = Vector2(1320, 20)
+
+[node name="Level" type="Node2D" unique_id=1164888761]
+
+[node name="Borders" type="Node2D" parent="." unique_id=1407809030]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=2046444164]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1390633815]
+position = Vector2(-10, 363)
+shape = SubResource("RectangleShape2D_d5hc8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1724254291]
+position = Vector2(630, -10)
+shape = SubResource("RectangleShape2D_f8w55")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1741531113]
+position = Vector2(1290, 354)
+shape = SubResource("RectangleShape2D_fgl56")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1730904704]
+position = Vector2(640, 731)
+shape = SubResource("RectangleShape2D_cdi5o")
+
+[node name="Tools" type="Node2D" parent="." unique_id=2065705968]
+
+[node name="Tool" parent="Tools" unique_id=633256298 instance=ExtResource("2_w7c3h")]
+position = Vector2(71, 105)
+
+[node name="Player" parent="." unique_id=274464145 instance=ExtResource("1_2q6dc")]
+z_index = 1
+position = Vector2(131, 66)
