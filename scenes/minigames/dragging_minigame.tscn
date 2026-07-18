@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bans3ilbjimqv"]
+
+[ext_resource type="Script" uid="uid://bsrwm5yjac3o5" path="res://scenes/minigames/dragging_minigame.gd" id="1_ax7o4"]
+[ext_resource type="Texture2D" uid="uid://dxa0p80l8v7e8" path="res://graphics/UI/minigames/dragging/area.png" id="1_wwujx"]
+[ext_resource type="PackedScene" uid="uid://begibfqw8x0ex" path="res://scenes/minigames/drag_object.tscn" id="3_8pqvq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5hc8"]
+radius = 14.035668
+
+[node name="DraggingMinigame" type="Node2D" unique_id=697904514]
+script = ExtResource("1_ax7o4")
+
+[node name="DragArea" type="Sprite2D" parent="." unique_id=177181881]
+position = Vector2(134, 66)
+texture = ExtResource("1_wwujx")
+
+[node name="Area2D" type="Area2D" parent="DragArea" unique_id=14738215]
+collision_layer = 32
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DragArea/Area2D" unique_id=2035704311]
+shape = SubResource("CircleShape2D_d5hc8")
+
+[node name="DragObject" parent="." unique_id=738981660 instance=ExtResource("3_8pqvq")]
+position = Vector2(194, 97)
+
+[connection signal="mouse_entered" from="DragArea/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="DragArea/Area2D" to="." method="_on_area_2d_mouse_exited"]

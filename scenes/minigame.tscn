@@ -417,12 +417,13 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 36
 script = ExtResource("1_5iev5")
 metadata/_edit_vertical_guides_ = [320.0]
+metadata/_edit_horizontal_guides_ = [28.0]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1642657452]
 visible = false
