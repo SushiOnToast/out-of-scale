@@ -24,9 +24,16 @@ func get_input():
 			current_item.active = true
 
 func _process(_delta: float) -> void:
+	if Global.minigame_mode:
+		if current_item:
+			current_item.active = false
+			current_item = null
+			$Sprite2D.texture = idle_texture
+	else:
+		get_input()
+	
 	var mouse_pos = get_global_mouse_position()
 	position = mouse_pos
-	get_input()
 	
 	if current_item:
 		$Sprite2D.texture = holding_texture

@@ -4,6 +4,9 @@ var current_body: Node2D = null
 
 
 func _physics_process(_delta: float) -> void:
+	if Global.minigame_mode:
+		return
+	
 	hovering = false
 	var still_in_range := false
 

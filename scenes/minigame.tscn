@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dy31g7lrh5a1v"]
+
+[ext_resource type="Script" uid="uid://v23rdh7tf10u" path="res://scenes/minigame.gd" id="1_5iev5"]
+
+[node name="Minigame" type="MarginContainer" unique_id=410359591]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_5iev5")
+metadata/_edit_vertical_guides_ = [320.0]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1642657452]
+layout_mode = 2
+color = Color(0.218301, 0.218301, 0.21830097, 1)
