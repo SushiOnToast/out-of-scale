@@ -5,4 +5,4 @@ func action(body_part: Sprite2D):
 		#print("success")
 	
 	body_part.scale += Vector2(0.1, 0.1)
-	trigger_minigame.emit(0)
+	trigger_minigame.emit(randi_range(0, 3))

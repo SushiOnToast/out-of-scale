@@ -5,8 +5,8 @@ signal minigame_finished()
 var active = false
 @export var wobble_speed: float = 3.0
 @export var wobble_radius: float = 15.0
-@export var fill_speed: float = 0.1
-@export var drain_speed: float = 0.2
+@export var fill_speed: float = 0.2
+@export var drain_speed: float = 0.4
 
 var base_position: Vector2
 var time_elapsed: float = 0.0
@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 
 	update_visual(progress)
 
-	if progress >= 1.5:
+	if progress >= 1.0:
 		minigame_finished.emit()
 
 func update_visual(value: float) -> void:
