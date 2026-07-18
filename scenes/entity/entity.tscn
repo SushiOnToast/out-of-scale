@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dh1mxbga4i2fj" path="res://graphics/characters/entities/anomaly1/arm.png" id="6_1w0ui"]
 [ext_resource type="Texture2D" uid="uid://cas5rehawbyiu" path="res://graphics/characters/entities/anomaly1/leg.png" id="7_uphax"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5hc8"]
+size = Vector2(24, 42)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2obgo"]
 size = Vector2(10, 10)
 
@@ -27,14 +30,15 @@ size = Vector2(4, 16)
 [sub_resource type="CircleShape2D" id="CircleShape2D_2obgo"]
 radius = 8.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5hc8"]
-size = Vector2(24, 42)
-
 [node name="Entity" type="CharacterBody2D" unique_id=1416988511]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_gr72c")
 outline_texture = ExtResource("2_et01i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=601728405]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_d5hc8")
 
 [node name="Head" type="Sprite2D" parent="." unique_id=354367695]
 texture = ExtResource("2_mdi4j")
@@ -122,7 +126,3 @@ script = ExtResource("3_m0cyi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/Area2D" unique_id=118643076]
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_2obgo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=601728405]
-position = Vector2(0, 11)
-shape = SubResource("RectangleShape2D_d5hc8")
