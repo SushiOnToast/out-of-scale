@@ -1,22 +1,21 @@
 extends CharacterBody2D
-
 @export var outline_texture : Texture
 @onready var body_parts = [$Head/Area2D, $Torso/Area2D, $Torso/RightLeg/Area2D, $Torso/RightArm/Area2D, $Torso/LeftLeg/Area2D, $Torso/LeftArm/Area2D]
-var shape 
+var shape
 
 func _ready() -> void:
 	shape = $CollisionShape2D.shape
-	var part = body_parts.pick_random() as Area2D
-	print(part.get_parent().scale)
-	var random_scale = snappedf([randf_range(0.5, 0.8), randf_range(1.5, 3)].pick_random(), 0.1)
-	part.get_parent().scale = Vector2(random_scale, random_scale)
-	print(part.get_parent().scale)
 
-#func _process(_delta: float) -> void:
-	## if you still want to see hover states for debugging:
-	#for part in [$Head/Area2D, $Torso/Area2D, $RightLeg/Area2D, $RightArm/Area2D, $LeftLeg/Area2D, $LeftArm/Area2D]:
-		#print(part.name)
-		
+	var shuffled_parts = body_parts.duplicate()
+	shuffled_parts.shuffle()
+
+	var count = clamp(Global.parts_to_modify, 1, body_parts.size())
+
+	for i in range(count):
+		var part = shuffled_parts[i] as Area2D
+		var random_scale = snappedf([randf_range(0.5, 0.8), randf_range(1.5, 3)].pick_random(), 0.1)
+		part.get_parent().scale = Vector2(random_scale, random_scale)
+
 func check_cured() -> bool:
 	var cured = true
 	for body_part in body_parts:
