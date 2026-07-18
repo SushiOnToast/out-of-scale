@@ -39,7 +39,7 @@ func update_timer_display() -> void:
 func _on_round_failed() -> void:
 	Global.round_active = false
 	print("Time's up! Cured: ", Global.patients_cured, " / ", Global.patients_required)
-	# show a "you failed" screen, or just restart — up to you
+	get_tree().change_scene_to_file("res://scenes/UI/game_over.tscn")
 
 func create_new_entity():
 	current_entity = entity_scenes.pick_random().instantiate() as CharacterBody2D

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://ccd43c3cxmrei"]
 
+[ext_resource type="Script" uid="uid://b6sda0xw2w70g" path="res://scenes/UI/menu.gd" id="1_u81ku"]
+
 [node name="Menu" type="Control" unique_id=1001180836]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_u81ku")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=58216626]
 layout_mode = 1
@@ -16,3 +19,31 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=2007919030]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 35.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+rotation = -0.0023086814
+text = "Out of Scale"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="." unique_id=276639357]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_top = 80.0
+offset_right = 20.5
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Play"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
