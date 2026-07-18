@@ -1,9 +1,12 @@
 extends CharacterBody2D
 @export var outline_texture : Texture
-@onready var body_parts = [$Head/Area2D, $Torso/Area2D, $Torso/RightLeg/Area2D, $Torso/RightArm/Area2D, $Torso/LeftLeg/Area2D, $Torso/LeftArm/Area2D]
+var body_parts : Array
 var shape
 
 func _ready() -> void:
+	body_parts = find_children("*", "Area2D")
+	print(body_parts)
+	
 	shape = $CollisionShape2D.shape
 
 	var shuffled_parts = body_parts.duplicate()

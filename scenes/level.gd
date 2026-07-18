@@ -1,6 +1,11 @@
 extends Node2D
 var minigame_scene = preload("res://scenes/minigame.tscn")
-var entity_scene = preload("res://scenes/entity/entity.tscn")
+var entity_scenes = [
+	preload("res://scenes/entity/entity_1.tscn"),
+	preload("res://scenes/entity/entity_2.tscn"),
+	preload("res://scenes/entity/entity_3.tscn"),
+	preload("res://scenes/entity/entity_4.tscn")
+]
 
 @onready var ui_layer = $UI
 var player_original_parent: Node = null
@@ -19,7 +24,7 @@ func _ready() -> void:
 	create_new_entity()
 
 func create_new_entity():
-	current_entity = entity_scene.instantiate() as CharacterBody2D
+	current_entity = entity_scenes.pick_random().instantiate() as CharacterBody2D
 	current_entity.position = Vector2(160, 90)
 	current_entity.scale = Global.entity_scale
 	$Entities.add_child(current_entity)

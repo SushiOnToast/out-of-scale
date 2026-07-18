@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://c44keqp3njlnf"]
+
+[ext_resource type="Script" uid="uid://pw126bvpeonv" path="res://scenes/entity/entity.gd" id="1_qvw7m"]
+[ext_resource type="Texture2D" uid="uid://bfnu2h7n128hf" path="res://graphics/characters/entities/anomaly3/head.png" id="2_4kosc"]
+[ext_resource type="Script" uid="uid://bkw7qjddat5ci" path="res://scenes/entity/extras/anchor_part.gd" id="2_bgkqb"]
+[ext_resource type="Script" uid="uid://dkm3ss7u0yghx" path="res://scenes/entity/extras/body_part.gd" id="3_sxc4o"]
+[ext_resource type="Texture2D" uid="uid://bjx2n1j3klhwc" path="res://graphics/characters/entities/anomaly3/torso.png" id="4_x0cbd"]
+[ext_resource type="Texture2D" uid="uid://bghlvvmhdne8g" path="res://graphics/characters/entities/anomaly3/leg.png" id="6_veiy6"]
+[ext_resource type="Texture2D" uid="uid://ddrkg4kuvjhpc" path="res://graphics/characters/entities/anomaly3/arm.png" id="7_ld85f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8w55"]
+size = Vector2(4, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5hc8"]
+size = Vector2(4, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgl56"]
+size = Vector2(4, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdi5o"]
+size = Vector2(4, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkhl"]
+size = Vector2(12, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwl81"]
+size = Vector2(22, 46)
+
+[node name="Entity3" type="CharacterBody2D" unique_id=498531122]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_qvw7m")
+
+[node name="Head" type="Sprite2D" parent="." unique_id=1227839184]
+texture = ExtResource("2_4kosc")
+centered = false
+offset = Vector2(-7, -14)
+
+[node name="Area2D" type="Area2D" parent="Head" unique_id=1259060320]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("3_sxc4o")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Head/Area2D" unique_id=98360851]
+polygon = PackedVector2Array(-8, 0, 8, 0, 2, -14, -2, -14)
+
+[node name="Torso" type="Sprite2D" parent="." unique_id=1023604283]
+position = Vector2(0, 1)
+texture = ExtResource("4_x0cbd")
+centered = false
+offset = Vector2(-6, 0)
+script = ExtResource("2_bgkqb")
+
+[node name="RightLeg" type="Sprite2D" parent="Torso" unique_id=1287143000]
+position = Vector2(2, 15)
+texture = ExtResource("6_veiy6")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="Torso/RightLeg" unique_id=1155100965]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("3_sxc4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/RightLeg/Area2D" unique_id=1228665822]
+position = Vector2(2, 8)
+shape = SubResource("RectangleShape2D_f8w55")
+
+[node name="LeftLeg" type="Sprite2D" parent="Torso" unique_id=486724115]
+position = Vector2(-2, 15)
+texture = ExtResource("6_veiy6")
+centered = false
+offset = Vector2(-4, 0)
+
+[node name="Area2D" type="Area2D" parent="Torso/LeftLeg" unique_id=2111721172]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("3_sxc4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/LeftLeg/Area2D" unique_id=1827240862]
+position = Vector2(-2, 8)
+shape = SubResource("RectangleShape2D_d5hc8")
+
+[node name="RightArm" type="Sprite2D" parent="Torso" unique_id=927192862]
+position = Vector2(7, 0)
+texture = ExtResource("7_ld85f")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="Torso/RightArm" unique_id=1131034096]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("3_sxc4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/RightArm/Area2D" unique_id=862189423]
+position = Vector2(2, 8)
+shape = SubResource("RectangleShape2D_fgl56")
+
+[node name="LeftArm" type="Sprite2D" parent="Torso" unique_id=158252368]
+position = Vector2(-7, 0)
+texture = ExtResource("7_ld85f")
+centered = false
+offset = Vector2(-4, 0)
+
+[node name="Area2D" type="Area2D" parent="Torso/LeftArm" unique_id=706251137]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("3_sxc4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/LeftArm/Area2D" unique_id=1619518034]
+position = Vector2(-2, 8)
+shape = SubResource("RectangleShape2D_cdi5o")
+
+[node name="Area2D" type="Area2D" parent="Torso" unique_id=484888286]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("3_sxc4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/Area2D" unique_id=749069142]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_dqkhl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1116388485]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_kwl81")
