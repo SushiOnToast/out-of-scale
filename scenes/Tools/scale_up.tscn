@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dkh8f2gpce1jj"]
+
+[ext_resource type="PackedScene" uid="uid://b33cpfnk54xc1" path="res://scenes/Tools/tool.tscn" id="1_8i6je"]
+[ext_resource type="Script" uid="uid://dw0r6ehn61ef0" path="res://scenes/Tools/scale_up.gd" id="2_pb15m"]
+
+[node name="ScaleUp" unique_id=633256298 instance=ExtResource("1_8i6je")]
+script = ExtResource("2_pb15m")

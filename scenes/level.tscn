@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cyswt4o4g6uy"]
 
 [ext_resource type="PackedScene" uid="uid://xftl8kd7g1af" path="res://scenes/player.tscn" id="1_2q6dc"]
-[ext_resource type="PackedScene" uid="uid://b33cpfnk54xc1" path="res://scenes/tool.tscn" id="2_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://dkh8f2gpce1jj" path="res://scenes/Tools/scale_up.tscn" id="3_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://dwmkfklfd4ajy" path="res://scenes/entity.tscn" id="3_w8frs"]
+[ext_resource type="PackedScene" uid="uid://d22yxna7yye57" path="res://scenes/Tools/scale_down.tscn" id="4_mx8sn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5hc8"]
 size = Vector2(20, 192)
@@ -41,11 +43,18 @@ shape = SubResource("RectangleShape2D_fgl56")
 position = Vector2(159.5, 190)
 shape = SubResource("RectangleShape2D_cdi5o")
 
-[node name="Tools" type="Node2D" parent="." unique_id=2065705968]
-
-[node name="Tool" parent="Tools" unique_id=633256298 instance=ExtResource("2_w7c3h")]
-position = Vector2(71, 105)
+[node name="Entity" parent="." unique_id=1416988511 instance=ExtResource("3_w8frs")]
+position = Vector2(229, 62)
+scale = Vector2(0.2, 0.2)
 
 [node name="Player" parent="." unique_id=274464145 instance=ExtResource("1_2q6dc")]
 z_index = 1
 position = Vector2(131, 66)
+
+[node name="Tools" type="Node2D" parent="." unique_id=2065705968]
+
+[node name="ScaleUp" parent="Tools" unique_id=633256298 instance=ExtResource("3_mx8sn")]
+position = Vector2(78, 132)
+
+[node name="ScaleDown" parent="Tools" unique_id=808673172 instance=ExtResource("4_mx8sn")]
+position = Vector2(115, 122)

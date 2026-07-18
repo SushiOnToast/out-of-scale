@@ -1,0 +1,28 @@
+extends CharacterBody2D
+class_name Tool
+
+var active = false
+var gravity = 200
+
+var target: Sprite2D
+
+func apply_gravity(delta):
+	velocity.y += gravity * delta
+
+func _physics_process(delta: float) -> void:
+	if !active:
+		apply_gravity(delta)
+	
+	if Input.is_action_just_pressed("use") and active and target:
+		action(target)
+		
+	move_and_slide()
+
+func action(body_part: Sprite2D):
+	#print(body_part.scale)
+	#if body_part.scale - Vector2(0.1, 0.1) > Vector2(0.1, 0.1):
+		#body_part.scale -= Vector2(0.1, 0.1)
+	#else:
+		#print("Limit reached")
+	##print($ActionPoint.position)
+	pass

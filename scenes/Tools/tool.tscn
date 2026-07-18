@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://b33cpfnk54xc1"]
 
-[ext_resource type="Script" uid="uid://bvl0h405hsqmu" path="res://scenes/tool.gd" id="1_d1t6i"]
+[ext_resource type="Script" uid="uid://bvl0h405hsqmu" path="res://scenes/Tools/tool.gd" id="1_d1t6i"]
 [ext_resource type="Texture2D" uid="uid://bp87rcifs8yq4" path="res://graphics/tools/zoom_in.png" id="1_uonk4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5hc8"]
-size = Vector2(16, 16)
 
 [node name="Tool" type="CharacterBody2D" unique_id=633256298]
 collision_layer = 4
@@ -14,5 +11,5 @@ script = ExtResource("1_d1t6i")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=366169014]
 texture = ExtResource("1_uonk4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1332414787]
-shape = SubResource("RectangleShape2D_d5hc8")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1841964396]
+polygon = PackedVector2Array(-6, -7, -6, -6, -7, -6, -7, 3, -6, 3, -6, 4, -6, 4, 1, 4, 1, 3, 2, 3, 2, 2, 3, 2, 3, 1, 4, 1, 4, -6, 3, -6, 3, -7)

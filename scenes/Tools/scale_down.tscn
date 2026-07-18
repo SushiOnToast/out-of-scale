@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d22yxna7yye57"]
+
+[ext_resource type="PackedScene" uid="uid://b33cpfnk54xc1" path="res://scenes/Tools/tool.tscn" id="1_neb6u"]
+[ext_resource type="Texture2D" uid="uid://dbofwxjkwo25p" path="res://graphics/tools/zoom_out.png" id="2_d5bxf"]
+[ext_resource type="Script" uid="uid://bujxywms6tnpx" path="res://scenes/Tools/scale_down.gd" id="2_gprrq"]
+
+[node name="ScaleDown" unique_id=633256298 instance=ExtResource("1_neb6u")]
+script = ExtResource("2_gprrq")
+
+[node name="Sprite2D" parent="." index="0" unique_id=366169014]
+texture = ExtResource("2_d5bxf")
