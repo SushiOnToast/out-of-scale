@@ -2,9 +2,6 @@ extends CenterContainer
 
 signal minigame_finished()
 
-func _ready() -> void:
-	$TextureRect.texture = get_tree().get_first_node_in_group("AllMatchNodes").target_texture
-
 func check_matched():
 	var matched = true
 	for node in get_tree().get_nodes_in_group("AllMatchNodes"):

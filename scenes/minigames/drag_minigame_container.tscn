@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://com0eux6v8fn5"]
+
+[ext_resource type="PackedScene" uid="uid://bans3ilbjimqv" path="res://scenes/minigames/dragging_minigame.tscn" id="1_r8nu4"]
+
+[node name="DragMinigameContainer" type="CenterContainer" unique_id=1079897782]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="DraggingMinigame" parent="." unique_id=697904514 instance=ExtResource("1_r8nu4")]
