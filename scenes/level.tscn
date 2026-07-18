@@ -909,4 +909,5 @@ theme_override_font_sizes/font_size = 11
 text = "Confirm"
 
 [connection signal="trigger_minigame" from="Tools/ScaleUp" to="." method="_on_scale_up_trigger_minigame"]
+[connection signal="trigger_minigame" from="Tools/ScaleDown" to="." method="_on_scale_down_trigger_minigame"]
 [connection signal="pressed" from="UI/ConfirmButton" to="." method="_on_confirm_button_pressed"]

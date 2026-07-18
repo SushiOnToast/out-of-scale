@@ -23,9 +23,8 @@ func create_new_entity():
 	current_entity.position = Vector2(160, 90)
 	current_entity.scale = Global.entity_scale
 	$Entities.add_child(current_entity)
-	
-	
-func _on_scale_up_trigger_minigame(target: Sprite2D, type: int) -> void:
+
+func trigger_minigame(target: Sprite2D, type: int):
 	Global.minigame_mode = true
 
 	var minigame = minigame_scene.instantiate()
@@ -43,7 +42,12 @@ func _on_scale_up_trigger_minigame(target: Sprite2D, type: int) -> void:
 	minigame_copy.scale = Vector2(3.0, 3.0)  # reset scale so it displays at a consistent size regardless of how shrunk/stretched the original is
 	minigame.add_child(minigame_copy)
 	minigame.start(minigame_copy, 0)
-
+	
+func _on_scale_up_trigger_minigame(target: Sprite2D, type: int) -> void:
+	trigger_minigame(target, type)
+	
+func _on_scale_down_trigger_minigame(target: Sprite2D, type: Variant) -> void:
+	trigger_minigame(target, type)
 
 func _on_confirm_button_pressed() -> void:
 	if current_entity:
