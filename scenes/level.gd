@@ -21,7 +21,25 @@ var current_entity: CharacterBody2D
 	#$UI/TextureRect.texture = current_entity.outline_texture
 	
 func _ready() -> void:
+	Global.start_new_round()
 	create_new_entity()
+
+func _process(delta: float) -> void:
+	if Global.round_active:
+		Global.time_remaining -= delta
+		update_timer_display() 
+
+		if Global.time_remaining <= 0:
+			_on_round_failed()
+
+func update_timer_display() -> void:
+	$UI/TimerLabel.text = "Time: %d" % ceil(Global.time_remaining)
+	$UI/ScoreLabel.text = "%d / %d cured" % [Global.patients_cured, Global.patients_required]
+
+func _on_round_failed() -> void:
+	Global.round_active = false
+	print("Time's up! Cured: ", Global.patients_cured, " / ", Global.patients_required)
+	# show a "you failed" screen, or just restart — up to you
 
 func create_new_entity():
 	current_entity = entity_scenes.pick_random().instantiate() as CharacterBody2D
@@ -58,10 +76,23 @@ func _on_scale_down_trigger_minigame(type: int) -> void:
 	trigger_minigame(type)
 
 func _on_confirm_button_pressed() -> void:
-	if current_entity:
+	if current_entity and Global.round_active:
 		if current_entity.check_cured():
 			print("success")
+			Global.patients_cured += 1
 			current_entity.queue_free()
-			create_new_entity()
+
+			if Global.patients_cured >= Global.patients_required:
+				_on_round_success()
+			else:
+				create_new_entity()
 		else:
 			print("try again")
+
+func _on_round_success() -> void:
+	Global.round_active = false
+	Global.rounds_completed += 1
+	print("Round complete! Moving to round ", Global.rounds_completed + 1)
+	# small delay/transition here if you want, then:
+	Global.start_new_round()
+	create_new_entity()

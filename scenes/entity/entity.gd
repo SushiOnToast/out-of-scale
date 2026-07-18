@@ -5,8 +5,6 @@ var shape
 
 func _ready() -> void:
 	body_parts = find_children("*", "Area2D")
-	print(body_parts)
-	
 	shape = $CollisionShape2D.shape
 
 	var shuffled_parts = body_parts.duplicate()
