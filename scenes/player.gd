@@ -15,8 +15,10 @@ func _ready() -> void:
 func get_input():
 	if Global.minigame_mode:
 		$Sprite2D.texture = minigame_click_texture if Input.is_action_pressed("use") else minigame_texture
+		scale = Vector2(0.5, 0.5)
 	else:
 		$Sprite2D.texture = holding_texture if Input.is_action_pressed("grab") else idle_texture
+		scale = Vector2.ONE
 			
 		if Input.is_action_just_released("grab") and hover_item:
 			if current_item:

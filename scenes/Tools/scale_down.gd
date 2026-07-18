@@ -7,7 +7,7 @@ func action(body_part: Sprite2D):
 	#else:
 	if body_part.scale - Vector2(0.1, 0.1) > Vector2(0.1, 0.1):
 		body_part.scale -= Vector2(0.1, 0.1)
-		trigger_minigame.emit(target, 0)
+		trigger_minigame.emit(0)
 
 	else:
 		print("Limit reached")

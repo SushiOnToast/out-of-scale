@@ -6,7 +6,7 @@ var gravity = 200
 
 var target: Sprite2D
 
-signal trigger_minigame(target: Sprite2D, type)
+signal trigger_minigame(type: int)
 
 func apply_gravity(delta):
 	velocity.y += gravity * delta
