@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c82lca1etir4y" path="res://graphics/tilesets/monochrome_tilemap_transparent_packed.png" id="2_2r41h"]
 [ext_resource type="PackedScene" uid="uid://dkh8f2gpce1jj" path="res://scenes/Tools/scale_up.tscn" id="3_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://d22yxna7yye57" path="res://scenes/Tools/scale_down.tscn" id="4_mx8sn"]
+[ext_resource type="Theme" uid="uid://dhby3s6wpwx4t" path="res://themes/button.tres" id="5_b121j"]
 [ext_resource type="FontFile" uid="uid://dbq7pcp2vgx40" path="res://fonts/Tiny5-Regular.ttf" id="7_b121j"]
 [ext_resource type="FontFile" uid="uid://dpjb8fmf248em" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="7_klq6b"]
 
@@ -884,19 +885,15 @@ shape = SubResource("RectangleShape2D_fgl56")
 position = Vector2(159.5, 190)
 shape = SubResource("RectangleShape2D_cdi5o")
 
-[node name="Player" parent="." unique_id=274464145 instance=ExtResource("1_2q6dc")]
-z_index = 1
-position = Vector2(131, 66)
-
 [node name="Entities" type="Node2D" parent="." unique_id=1986975571]
 
 [node name="Tools" type="Node2D" parent="." unique_id=2065705968]
 
 [node name="ScaleUp" parent="Tools" unique_id=633256298 instance=ExtResource("3_mx8sn")]
-position = Vector2(95, 65)
+position = Vector2(202, 75)
 
 [node name="ScaleDown" parent="Tools" unique_id=808673172 instance=ExtResource("4_mx8sn")]
-position = Vector2(95, 90)
+position = Vector2(221, 115)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1489006081]
 visible = false
@@ -923,8 +920,7 @@ offset_right = -30.0
 offset_bottom = 11.5
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_klq6b")
-theme_override_font_sizes/font_size = 11
+theme = ExtResource("5_b121j")
 text = "Confirm"
 
 [node name="Controls" type="RichTextLabel" parent="UI" unique_id=170691823]
@@ -985,13 +981,15 @@ anchors_preset = -1
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 30.0
-offset_top = -11.5
-offset_right = 41.0
-offset_bottom = 11.5
+offset_top = -14.25
+offset_right = 64.0
+offset_bottom = 8.75
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_klq6b")
-theme_override_font_sizes/font_size = 11
+theme = ExtResource("5_b121j")
 text = "Hint"
+
+[node name="Player" parent="UI" unique_id=274464145 instance=ExtResource("1_2q6dc")]
+position = Vector2(131, 66)
 
 [node name="Round Screen" type="ColorRect" parent="UI" unique_id=248872637]
 visible = false

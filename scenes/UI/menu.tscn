@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b6sda0xw2w70g" path="res://scenes/UI/menu.gd" id="1_u81ku"]
 [ext_resource type="PackedScene" uid="uid://xftl8kd7g1af" path="res://scenes/player.tscn" id="2_2tfbb"]
+[ext_resource type="Theme" uid="uid://dhby3s6wpwx4t" path="res://themes/button.tres" id="2_ny0ke"]
 [ext_resource type="Texture2D" uid="uid://c440l78d43j3i" path="res://graphics/UI/menu_click.png" id="3_iysyy"]
 [ext_resource type="Texture2D" uid="uid://d2byevc4x7urn" path="res://graphics/UI/menu.png" id="4_ny0ke"]
-
-[sub_resource type="Theme" id="Theme_iysyy"]
 
 [node name="Menu" type="Control" unique_id=1001180836]
 layout_mode = 3
@@ -49,7 +48,7 @@ offset_top = 80.0
 offset_right = 20.5
 offset_bottom = 31.0
 grow_horizontal = 2
-theme = SubResource("Theme_iysyy")
+theme = ExtResource("2_ny0ke")
 text = "Play"
 
 [node name="Player" parent="." unique_id=1200589926 instance=ExtResource("2_2tfbb")]

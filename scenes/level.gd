@@ -13,7 +13,7 @@ var player_original_parent: Node = null
 var current_entity: CharacterBody2D
 
 var hint_cooldown_duration: float = 10.0
-var hint_show_duration: float = 0.75
+var hint_show_duration: float = 1.25
 var hint_max_alpha: float = 0.4
 var hint_cooldown_remaining: float = 0.0
 
