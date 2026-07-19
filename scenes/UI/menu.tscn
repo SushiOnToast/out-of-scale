@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://ccd43c3cxmrei"]
 
 [ext_resource type="Script" uid="uid://b6sda0xw2w70g" path="res://scenes/UI/menu.gd" id="1_u81ku"]
+[ext_resource type="PackedScene" uid="uid://xftl8kd7g1af" path="res://scenes/player.tscn" id="2_2tfbb"]
+[ext_resource type="Texture2D" uid="uid://c440l78d43j3i" path="res://graphics/UI/menu_click.png" id="3_iysyy"]
+[ext_resource type="Texture2D" uid="uid://d2byevc4x7urn" path="res://graphics/UI/menu.png" id="4_ny0ke"]
 
 [node name="Menu" type="Control" unique_id=1001180836]
 layout_mode = 3
@@ -45,5 +48,10 @@ offset_right = 20.5
 offset_bottom = 31.0
 grow_horizontal = 2
 text = "Play"
+
+[node name="Player" parent="." unique_id=1200589926 instance=ExtResource("2_2tfbb")]
+click_texture = ExtResource("3_iysyy")
+idle_texture = ExtResource("4_ny0ke")
+menu = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
