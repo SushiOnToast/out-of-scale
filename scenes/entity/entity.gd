@@ -1,7 +1,8 @@
 extends CharacterBody2D
-@export var outline_texture : Texture
 var body_parts : Array
 var shape
+
+@onready var outline = $Sprite2D
 
 func _ready() -> void:
 	body_parts = find_children("*", "Area2D")

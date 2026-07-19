@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bkw7qjddat5ci" path="res://scenes/entity/extras/anchor_part.gd" id="1_s6re3"]
 [ext_resource type="Script" uid="uid://pw126bvpeonv" path="res://scenes/entity/entity.gd" id="1_yo4rt"]
 [ext_resource type="Texture2D" uid="uid://cjvsfdnwoi8ql" path="res://graphics/characters/entities/anomaly2/torso.png" id="2_i8rbn"]
+[ext_resource type="Texture2D" uid="uid://dp6hddxckx7xb" path="res://graphics/characters/entities/anomaly2/outline.png" id="2_kwynk"]
 [ext_resource type="Script" uid="uid://dkm3ss7u0yghx" path="res://scenes/entity/extras/body_part.gd" id="2_yo4rt"]
 [ext_resource type="Texture2D" uid="uid://fpp3x3k0gq7v" path="res://graphics/characters/entities/anomaly2/legs.png" id="4_yo4rt"]
 
@@ -69,3 +70,8 @@ shape = SubResource("RectangleShape2D_fgl56")
 visible = false
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_d5hc8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1868194930]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 11)
+texture = ExtResource("2_kwynk")

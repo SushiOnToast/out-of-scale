@@ -2,25 +2,25 @@ extends Node2D
 var minigame_scene = preload("res://scenes/minigame.tscn")
 var entity_scenes = [
 	preload("res://scenes/entity/entity_1.tscn"),
-	#preload("res://scenes/entity/entity_2.tscn"),
-	#preload("res://scenes/entity/entity_3.tscn"),
-	#preload("res://scenes/entity/entity_4.tscn")
+	preload("res://scenes/entity/entity_2.tscn"),
+	preload("res://scenes/entity/entity_3.tscn"),
+	preload("res://scenes/entity/entity_4.tscn")
 ]
 
 @onready var ui_layer = $UI
 var player_original_parent: Node = null
 var current_entity: CharacterBody2D
 
-@export var hint_cooldown_duration: float = 15.0
-@export var hint_show_duration: float = 1.5
+@export var hint_cooldown_duration: float = 10.0
+@export var hint_show_duration: float = 0.75
 var hint_cooldown_remaining: float = 0.0
+@export var hint_max_alpha: float = 0.4
 
 func _ready() -> void:
 	_show_initial_round_screen()
 
 	Global.start_new_round()
 	create_new_entity()
-	$UI/TextureRect.modulate.a = 0.0
 
 func _show_initial_round_screen() -> void:
 	var round_screen = $"UI/Round Screen"
@@ -69,15 +69,6 @@ func create_new_entity():
 	current_entity.position = Vector2(160, 90)
 	current_entity.scale = Global.entity_scale
 	$Entities.add_child(current_entity)
-	if current_entity.shape is RectangleShape2D:
-		var collision_shape_node = current_entity.get_node("CollisionShape2D")
-		var world_pos = collision_shape_node.global_position
-		var raw_size = current_entity.shape.size * Global.entity_scale
-		var even_size = Vector2(round(raw_size.x / 2.0) * 2.0, round(raw_size.y / 2.0) * 2.0)
-		$UI/TextureRect.size = even_size
-		$UI/TextureRect.position = world_pos - (even_size / 2.0)
-	$UI/TextureRect.texture = current_entity.outline_texture
-	$UI/TextureRect.modulate.a = 0.0  
 
 func trigger_minigame(type: int):
 	Global.minigame_mode = true
@@ -139,7 +130,6 @@ func show_round_screen() -> void:
 
 	tween.chain().tween_interval(1.2)  # hold fully visible
 
-	# do the actual round setup while the screen still fully covers everything
 	tween.chain().tween_callback(func():
 		Global.start_new_round()
 		create_new_entity()
@@ -156,7 +146,11 @@ func _on_hint_button_pressed() -> void:
 	play_hint_animation()
 
 func play_hint_animation() -> void:
+	if not current_entity:
+		return
+
+	var outline_sprite = current_entity.outline
 	var tween = create_tween()
-	tween.tween_property($UI/TextureRect, "modulate:a", 1.0, 0.2)  
-	tween.tween_interval(hint_show_duration)                         
-	tween.tween_property($UI/TextureRect, "modulate:a", 0.0, 0.4)   
+	tween.tween_property(outline_sprite, "modulate:a", hint_max_alpha, 0.2)
+	tween.tween_interval(hint_show_duration)
+	tween.tween_property(outline_sprite, "modulate:a", 0.0, 0.2)

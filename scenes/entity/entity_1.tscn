@@ -34,7 +34,6 @@ radius = 8.0
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_olp71")
-outline_texture = ExtResource("2_b1j4r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=601728405]
 position = Vector2(0, 11)
@@ -126,3 +125,8 @@ script = ExtResource("4_jnnom")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/Area2D" unique_id=118643076]
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_2obgo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=950037390]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 11)
+texture = ExtResource("2_b1j4r")

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bjx2n1j3klhwc" path="res://graphics/characters/entities/anomaly3/torso.png" id="4_x0cbd"]
 [ext_resource type="Texture2D" uid="uid://bghlvvmhdne8g" path="res://graphics/characters/entities/anomaly3/leg.png" id="6_veiy6"]
 [ext_resource type="Texture2D" uid="uid://ddrkg4kuvjhpc" path="res://graphics/characters/entities/anomaly3/arm.png" id="7_ld85f"]
+[ext_resource type="Texture2D" uid="uid://vlxacyv8218u" path="res://graphics/characters/entities/anomaly3/outline.png" id="8_sxc4o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8w55"]
 size = Vector2(4, 16)
@@ -121,3 +122,8 @@ shape = SubResource("RectangleShape2D_dqkhl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1116388485]
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_kwl81")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1810284717]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 9)
+texture = ExtResource("8_sxc4o")
