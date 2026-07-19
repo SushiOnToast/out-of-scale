@@ -1,14 +1,11 @@
 extends Area2D
-
 @export var click_texture = preload("res://graphics/characters/player/player_holding.png")
 @export var idle_texture = preload("res://graphics/characters/player/player_idle.png")
-
 @export var menu = false
-
 var minigame_texture = preload("res://graphics/characters/player/player_minigame.png")
 var minigame_click_texture = preload("res://graphics/characters/player/player_minigame_click.png")
-var hover_item : CharacterBody2D
-var current_item : CharacterBody2D
+var hover_item : RigidBody2D
+var current_item : RigidBody2D
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
@@ -22,33 +19,28 @@ func get_input():
 	else:
 		$Sprite2D.texture = click_texture if Input.is_action_pressed("grab") else idle_texture
 		scale = Vector2.ONE
-
 		if Input.is_action_just_released("grab"):
 			if current_item:
-				current_item.active = false
+				current_item.set_active(false)
 				current_item = null
 			elif hover_item:
 				current_item = hover_item
-				current_item.active = true
+				current_item.set_active(true)
 
 func _process(_delta: float) -> void:
 	if Global.minigame_mode:
 		if current_item:
-			current_item.active = false
+			current_item.set_active(false)
 			current_item = null
-
 	get_input()
-
 	var mouse_pos = get_global_mouse_position()
 	position = mouse_pos
-
 	if current_item:
 		$Sprite2D.texture = click_texture
-		current_item.position = mouse_pos - Vector2(7.5, 7.5)
 
-func _on_body_entered(body: CharacterBody2D) -> void:
+func _on_body_entered(body: RigidBody2D) -> void:
 	hover_item = body
 
-func _on_body_exited(body: CharacterBody2D) -> void:
+func _on_body_exited(body: RigidBody2D) -> void:
 	if hover_item == body:
 		hover_item = null

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c82lca1etir4y" path="res://graphics/tilesets/monochrome_tilemap_transparent_packed.png" id="2_2r41h"]
 [ext_resource type="PackedScene" uid="uid://dkh8f2gpce1jj" path="res://scenes/Tools/scale_up.tscn" id="3_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://d22yxna7yye57" path="res://scenes/Tools/scale_down.tscn" id="4_mx8sn"]
+[ext_resource type="FontFile" uid="uid://dbq7pcp2vgx40" path="res://fonts/Tiny5-Regular.ttf" id="7_b121j"]
 [ext_resource type="FontFile" uid="uid://dpjb8fmf248em" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="7_klq6b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klq6b"]
@@ -841,15 +842,14 @@ color = Color(0, 0, 0, 1)
 [node name="Tiles" type="Node2D" parent="." unique_id=1751810445]
 
 [node name="BG" type="TileMapLayer" parent="Tiles" unique_id=1199027681]
-modulate = Color(1, 1, 1, 0.18431373)
+modulate = Color(18.892157, 18.892157, 18.892157, 0.12941177)
 position = Vector2(8, 0)
 scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAAJAAEAAQAEAAEAAAAJAAIAAQAEAAIAAAAKAAAAAQAFAAAAAAAKAAEAAQAFAAEAAAAKAAIAAQAFAAIAAAALAAEAAQAGAAEAAAALAAIAAQAGAAIAAAA=")
+tile_map_data = PackedByteArray("AAAJAAEAAQAEAAEAAAAJAAIAAQAEAAIAAAAKAAAAAQAFAAAAAAAKAAEAAQAFAAEAAAAKAAIAAQAFAAIAAAALAAEAAQAGAAEAAAALAAIAAQAGAAIAAAD//wQAAQAIAAsAAAAAAAQAAQAJAAsAAAAAAAUAAQAJAAwAAAAAAAYAAQAHAA0AAAABAAYAAQAJAAsAAAABAAcAAQAJAAwAAAAKAAcAAQALAAwAAAALAAcAAQALAAwAAAAMAAcAAQAMAAwAAAAJAAcAAQALAAwAAAAIAAcAAQAKAAwAAAALAAYAAQAKAAEAAAAMAAUAAQAIAAEAAAAMAAYAAQALAAIAAAAMAAQAAQAEABAAAAACAAAAAQAFABAAAAACAAEAAQAFABEAAAA=")
 tile_set = SubResource("TileSet_d5hc8")
 
 [node name="Collisions" type="TileMapLayer" parent="Tiles" unique_id=1857323140]
 scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAAAAAUAAAALAAUAAAABAAUAAAALAAUAAAACAAUAAAALAAUAAAADAAUAAAAMAAUAAAADAAYAAAAMAAYAAAADAAcAAAAMAAYAAAACAAIAAAAGAAIAAAABAAIAAAAFAAIAAAAAAAIAAAAFAAIAAAA=")
 tile_set = SubResource("TileSet_f8w55")
 
 [node name="Borders" type="StaticBody2D" parent="." unique_id=2046444164]
@@ -908,16 +908,18 @@ theme_override_font_sizes/font_size = 11
 text = "Confirm"
 
 [node name="TimerLabel" type="Label" parent="UI" unique_id=1301363121]
-anchors_preset = 1
+anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -40.0
+offset_right = -3.0
 offset_bottom = 23.0
 grow_horizontal = 0
-theme_override_fonts/font = ExtResource("7_klq6b")
-theme_override_font_sizes/font_size = 14
-text = "timer"
+theme_override_fonts/font = ExtResource("7_b121j")
+theme_override_font_sizes/font_size = 10
+text = "time"
 horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="UI" unique_id=1468668516]
 anchors_preset = 5
@@ -927,10 +929,11 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("7_klq6b")
-theme_override_font_sizes/font_size = 14
-text = "score"
+theme_override_fonts/font = ExtResource("7_b121j")
+theme_override_font_sizes/font_size = 10
+text = "patients cured"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HintButton" type="Button" parent="UI" unique_id=763418253]
 offset_left = 222.0
