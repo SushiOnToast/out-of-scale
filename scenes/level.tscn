@@ -893,11 +893,8 @@ limit_bottom = 180
 [node name="UI" type="CanvasLayer" parent="." unique_id=1231739351]
 
 [node name="TextureRect" type="TextureRect" parent="UI" unique_id=123145732]
-visible = false
-offset_left = 233.0
-offset_top = 33.0
-offset_right = 233.0
-offset_bottom = 33.0
+offset_right = 256.0
+offset_bottom = 1.0
 
 [node name="ConfirmButton" type="Button" parent="UI" unique_id=2125768804]
 offset_left = 234.0
@@ -933,6 +930,42 @@ theme_override_font_sizes/font_size = 14
 text = "score"
 horizontal_alignment = 1
 
+[node name="HintButton" type="Button" parent="UI" unique_id=763418253]
+offset_left = 222.0
+offset_top = 95.0
+offset_right = 297.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("7_klq6b")
+theme_override_font_sizes/font_size = 11
+text = "Hint"
+
+[node name="Round Screen" type="ColorRect" parent="UI" unique_id=248872637]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RoundLabel" type="Label" parent="UI/Round Screen" unique_id=570919465]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_klq6b")
+text = "Round 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="trigger_minigame" from="Tools/ScaleUp" to="." method="_on_scale_up_trigger_minigame"]
 [connection signal="trigger_minigame" from="Tools/ScaleDown" to="." method="_on_scale_down_trigger_minigame"]
 [connection signal="pressed" from="UI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="UI/HintButton" to="." method="_on_hint_button_pressed"]
