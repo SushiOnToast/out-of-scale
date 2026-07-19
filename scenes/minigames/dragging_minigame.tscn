@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bsrwm5yjac3o5" path="res://scenes/minigames/dragging_minigame.gd" id="1_ax7o4"]
 [ext_resource type="Texture2D" uid="uid://dxa0p80l8v7e8" path="res://graphics/UI/minigames/dragging/area.png" id="1_wwujx"]
 [ext_resource type="PackedScene" uid="uid://begibfqw8x0ex" path="res://scenes/minigames/drag_object.tscn" id="3_8pqvq"]
+[ext_resource type="Texture2D" uid="uid://m1vbs212oyc4" path="res://graphics/UI/minigames/dragging/indicator.png" id="4_1trpw"]
+[ext_resource type="FontFile" uid="uid://dpjb8fmf248em" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="5_3e5l4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d5hc8"]
 radius = 14.035668
@@ -12,6 +14,7 @@ position = Vector2(-29, 0)
 script = ExtResource("1_ax7o4")
 
 [node name="DragArea" type="Sprite2D" parent="." unique_id=177181881]
+position = Vector2(0, 12)
 texture = ExtResource("1_wwujx")
 
 [node name="Area2D" type="Area2D" parent="DragArea" unique_id=14738215]
@@ -23,6 +26,26 @@ shape = SubResource("CircleShape2D_d5hc8")
 
 [node name="DragObject" parent="." unique_id=738981660 instance=ExtResource("3_8pqvq")]
 position = Vector2(66, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1402245521]
+offset_left = -8.0
+offset_top = -28.0
+offset_right = 8.0
+offset_bottom = -12.0
+texture = ExtResource("4_1trpw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=781395466]
+offset_left = -18.0
+offset_top = -39.0
+offset_right = 18.0
+offset_bottom = -30.0
+theme_override_fonts/font = ExtResource("5_3e5l4")
+theme_override_font_sizes/font_size = 7
+text = "drag here"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="DragArea/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="DragArea/Area2D" to="." method="_on_area_2d_mouse_exited"]

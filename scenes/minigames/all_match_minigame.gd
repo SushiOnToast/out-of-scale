@@ -22,4 +22,3 @@ func check_matched():
 func _process(_delta: float) -> void:
 	if check_matched():
 		minigame_finished.emit()
-		queue_free()

@@ -66,7 +66,7 @@ func on_round_failed() -> void:
 
 func create_new_entity():
 	current_entity = entity_scenes.pick_random().instantiate() as CharacterBody2D
-	current_entity.position = Vector2(160, 90)
+	current_entity.position = Vector2(160, 80)
 	current_entity.scale = Global.entity_scale
 	$Entities.add_child(current_entity)
 

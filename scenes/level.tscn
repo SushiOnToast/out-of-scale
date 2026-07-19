@@ -841,8 +841,10 @@ color = Color(0, 0, 0, 1)
 [node name="Tiles" type="Node2D" parent="." unique_id=1751810445]
 
 [node name="BG" type="TileMapLayer" parent="Tiles" unique_id=1199027681]
+modulate = Color(1, 1, 1, 0.18431373)
 position = Vector2(8, 0)
 scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAAJAAEAAQAEAAEAAAAJAAIAAQAEAAIAAAAKAAAAAQAFAAAAAAAKAAEAAQAFAAEAAAAKAAIAAQAFAAIAAAALAAEAAQAGAAEAAAALAAIAAQAGAAIAAAA=")
 tile_set = SubResource("TileSet_d5hc8")
 
 [node name="Collisions" type="TileMapLayer" parent="Tiles" unique_id=1857323140]

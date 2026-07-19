@@ -11,6 +11,8 @@ func _process(_delta: float) -> void:
 	if dropped_on_target and not was_dropped_on_target:
 		$DragArea.global_position = get_random_screen_position()
 		successes += 1
+		$TextureRect.hide()
+		$Label.hide()
 
 		if successes >= 5:
 			minigame_finished.emit()
