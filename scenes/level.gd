@@ -62,7 +62,8 @@ func transition_to_next_entity() -> void:
 func update_timer_display() -> void:
 	$UI/TimerLabel.text = "Time: %d" % ceil(Global.time_remaining)
 	$UI/ScoreLabel.text = "%d / %d cured" % [Global.patients_cured, Global.patients_required]
-
+	$UI/RoundNumber.text = "Round %d" % (Global.rounds_completed + 1)
+	
 func on_round_failed() -> void:
 	Global.round_active = false
 	print("Time's up! Cured: ", Global.patients_cured, " / ", Global.patients_required)
