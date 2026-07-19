@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6sda0xw2w70g" path="res://scenes/UI/menu.gd" id="1_u81ku"]
 [ext_resource type="PackedScene" uid="uid://xftl8kd7g1af" path="res://scenes/player.tscn" id="2_2tfbb"]
+[ext_resource type="Texture2D" uid="uid://ceqduj4h1qmf8" path="res://graphics/UI/menu_screen.png" id="2_78n2u"]
 [ext_resource type="Theme" uid="uid://dhby3s6wpwx4t" path="res://themes/button.tres" id="2_ny0ke"]
 [ext_resource type="Texture2D" uid="uid://c440l78d43j3i" path="res://graphics/UI/menu_click.png" id="3_iysyy"]
 [ext_resource type="Texture2D" uid="uid://d2byevc4x7urn" path="res://graphics/UI/menu.png" id="4_ny0ke"]
@@ -15,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u81ku")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=58216626]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=847201589]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,34 +25,78 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="." unique_id=2007919030]
+[node name="MenuScreen" type="TextureRect" parent="." unique_id=1155007952]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 35.0
-offset_right = 20.0
-offset_bottom = 23.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-rotation = -0.0023086814
-text = "Out of Scale"
+grow_vertical = 2
+texture = ExtResource("2_78n2u")
+expand_mode = 1
+
+[node name="Label1" type="Label" parent="." unique_id=612068382]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = 0.5
+offset_right = 37.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ny0ke")
+theme_override_colors/font_color = Color(0.93235976, 0.912047, 0.8729788, 1)
+theme_override_font_sizes/font_size = 10
+text = "cure anomalies"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1182583424]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = 11.0
+offset_right = 64.5
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ny0ke")
+theme_override_colors/font_color = Color(0.7261901, 0.670666, 0.5593685, 1)
+theme_override_font_sizes/font_size = 10
+text = "before the time runs out..."
 horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="." unique_id=276639357]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
+anchor_bottom = 1.0
 offset_left = -20.5
-offset_top = 80.0
-offset_right = 20.5
-offset_bottom = 31.0
+offset_top = -57.0
+offset_right = 9.5
+offset_bottom = -42.0
 grow_horizontal = 2
+grow_vertical = 0
 theme = ExtResource("2_ny0ke")
 text = "Play"
 
 [node name="Player" parent="." unique_id=1200589926 instance=ExtResource("2_2tfbb")]
+visible = false
+modulate = Color(1, 1, 1, 0)
 click_texture = ExtResource("3_iysyy")
 idle_texture = ExtResource("4_ny0ke")
 menu = true
