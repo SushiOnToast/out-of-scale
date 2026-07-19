@@ -33,19 +33,19 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -86.51419
-offset_top = 37.000004
-offset_right = 86.51419
-offset_bottom = 90.152725
+offset_left = -103.37129
+offset_top = 32.000004
+offset_right = 103.37128
+offset_bottom = 85.152725
 grow_horizontal = 2
 rotation = -0.0023086814
-theme_override_colors/default_color = Color(0.93333334, 0.9137255, 0.8745098, 1)
+theme_override_colors/default_color = Color(1, 0.5543759, 0.48551154, 1)
 theme_override_fonts/normal_font = ExtResource("2_uw231")
 theme_override_fonts/bold_font = ExtResource("3_4eny6")
 theme_override_font_sizes/normal_font_size = 27
 theme_override_font_sizes/bold_font_size = 19
 bbcode_enabled = true
-text = "Game Over!"
+text = "Mission Failed"
 horizontal_alignment = 1
 
 [node name="Score" type="RichTextLabel" parent="." unique_id=830503750]

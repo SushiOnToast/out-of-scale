@@ -1,5 +1,36 @@
 [gd_scene format=3 uid="uid://d3u44cbk8rxa7"]
 
+[ext_resource type="Script" uid="uid://dafpbuhv1c0sg" path="res://scenes/UI/story.gd" id="1_as8bs"]
+[ext_resource type="FontFile" uid="uid://dr5lprtk3mwqt" path="res://fonts/pixelify_sans/PixelifySans-SemiBold.ttf" id="1_vqvwl"]
+[ext_resource type="Texture2D" uid="uid://bs57gfjuycqog" path="res://graphics/UI/tile_0182.png" id="2_3acyn"]
+[ext_resource type="FontFile" uid="uid://dbq7pcp2vgx40" path="res://fonts/Tiny5-Regular.ttf" id="3_6wofi"]
+[ext_resource type="FontFile" uid="uid://dpjb8fmf248em" path="res://fonts/pixelify_sans/PixelifySans-VariableFont_wght.ttf" id="3_as8bs"]
+[ext_resource type="Shader" uid="uid://muwhy4bq03h5" path="res://shaders/vhss.gdshader" id="6_y6sis"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5tjt8"]
+shader = ExtResource("6_y6sis")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 3.0
+shader_parameter/roll_size = 15.50000073625
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.10000000475
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0
+shader_parameter/aberration = 0.0050000477375000685
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
 [node name="Story" type="Control" unique_id=1188490585]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +38,185 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_as8bs")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2089073021]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Trigger" type="Control" parent="." unique_id=1019397420]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="Trigger" unique_id=910247266]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 78.0
+offset_top = 49.5
+offset_right = 202.0
+offset_bottom = 72.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.45882353, 0.38039216, 1)
+theme_override_fonts/font = ExtResource("3_as8bs")
+theme_override_font_sizes/font_size = 13
+text = "Trigger Warning"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Trigger" unique_id=1836538635]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 78.0
+offset_top = 63.5
+offset_right = 202.0
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_as8bs")
+theme_override_font_sizes/font_size = 9
+text = "Flashing Images"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=962546027]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1605889998]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 51.0
+offset_top = 44.0
+offset_right = 229.0
+offset_bottom = 67.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.45882353, 0.38039216, 1)
+theme_override_fonts/font = ExtResource("1_vqvwl")
+theme_override_font_sizes/font_size = 14
+text = "EMERGENCY BROADCAST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=1550449289]
+modulate = Color(1, 0.45882353, 0.38039216, 1)
+layout_mode = 0
+offset_left = 235.0
+offset_top = 45.0
+offset_right = 255.0
+offset_bottom = 65.0
+texture = ExtResource("2_3acyn")
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=2014135721]
+modulate = Color(1, 0.4594742, 0.3784917, 1)
+layout_mode = 0
+offset_left = 63.0
+offset_top = 45.0
+offset_right = 83.0
+offset_bottom = 65.0
+texture = ExtResource("2_3acyn")
+
+[node name="Attention" type="RichTextLabel" parent="." unique_id=528601760]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.5
+offset_top = -16.5
+offset_right = 100.5
+offset_bottom = -3.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 15)
+theme_override_colors/default_color = Color(0.89059, 0.89059, 0.8905901, 1)
+theme_override_fonts/normal_font = ExtResource("3_as8bs")
+theme_override_font_sizes/normal_font_size = 9
+text = "ATTENTION CIVILIANS"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Text1" type="RichTextLabel" parent="." unique_id=244588903]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.5
+offset_top = 0.5
+offset_right = 92.5
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.89059, 0.89059, 0.8905901, 1)
+theme_override_fonts/normal_font = ExtResource("3_6wofi")
+theme_override_font_sizes/normal_font_size = 8
+text = "A containment failure at site 38 has released an unclassified proportion-altering agent into the region. Early symptoms include gradual, painless distortion of limbs. "
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Text2" type="RichTextLabel" parent="." unique_id=1669028742]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.5
+offset_top = -0.5
+offset_right = 92.5
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.89059, 0.89059, 0.8905901, 1)
+theme_override_fonts/normal_font = ExtResource("3_6wofi")
+theme_override_font_sizes/normal_font_size = 8
+text = "If you or someone in your household has been affected, report immediately to your nearest correction facility. Do not attempt self-correction.
+
+Please remain indoors and avoid unecessary contact."
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="VHS" type="ColorRect" parent="." unique_id=1559242980]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_5tjt8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cover" type="ColorRect" parent="." unique_id=1376775655]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

@@ -80,6 +80,9 @@ func _on_confirm_button_pressed() -> void:
 		if current_entity.check_cured():
 			print("success")
 			Global.patients_cured += 1
+			hint_cooldown_remaining = 0.0
+			$UI/HintButton.disabled = false
+			$UI/HintButton.text = "Scan"
 			if Global.patients_cured >= Global.patients_required:
 				current_entity.queue_free()
 				current_entity = null

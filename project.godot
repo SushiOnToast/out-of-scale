@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Out of Scale"
-run/main_scene="uid://ccd43c3cxmrei"
+run/main_scene="uid://d3u44cbk8rxa7"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
