@@ -23,8 +23,18 @@ var entity_exit_offset := Vector2(400, 0)
 var entity_enter_offset := Vector2(-400, 0)
 var entity_transition_gap: float = 0.3
 
+@onready var sfx_players: Array[AudioStreamPlayer] = [$SFXPlayer1, $SFXPlayer2]
+var next_player_index = 0
+
+var success_sound = preload("res://audio/sfx/success.wav")
+var failed_sound = preload("res://audio/sfx/failure.wav")
+var scan_sound = preload("res://audio/sfx/scan.wav")
+var minigame_start = preload("res://audio/sfx/minigame_start.wav")
+var minigame_end = preload("res://audio/sfx/minigame_end.wav")
+var new_round = preload("res://audio/sfx/new_round.wav")
+
 func _ready() -> void:
-	_show_initial_round_screen()
+	show_initial_round_screen()
 	Global.start_new_round()
 	create_new_entity(false)
 
@@ -36,6 +46,13 @@ func _process(delta: float) -> void:
 			on_round_failed()
 
 	_update_hint_cooldown(delta)
+	
+
+func play_sfx(sound: AudioStream) -> void:
+	var player = sfx_players[next_player_index]
+	player.stream = sound
+	player.play()
+	next_player_index = (next_player_index + 1) % sfx_players.size()
 
 func create_new_entity(animate_in: bool = true):
 	current_entity = entity_scenes.pick_random().instantiate() as CharacterBody2D
@@ -79,6 +96,7 @@ func _on_confirm_button_pressed() -> void:
 	if current_entity and Global.round_active:
 		if current_entity.check_cured():
 			print("success")
+			play_sfx(success_sound)
 			Global.patients_cured += 1
 			hint_cooldown_remaining = 0.0
 			$UI/HintButton.disabled = false
@@ -90,12 +108,14 @@ func _on_confirm_button_pressed() -> void:
 			else:
 				transition_to_next_entity()
 		else:
+			play_sfx(failed_sound)
 			print("try again")
 
-func _show_initial_round_screen() -> void:
+func show_initial_round_screen() -> void:
 	var round_screen = $"UI/Round Screen"
 	var round_label = $"UI/Round Screen/RoundLabel"
-
+	
+	play_sfx(new_round)
 	round_label.text = "Wave %d" % (Global.rounds_completed + 1)
 	round_screen.visible = true
 	round_screen.modulate.a = 1.0
@@ -109,9 +129,9 @@ func _show_initial_round_screen() -> void:
 func show_round_screen() -> void:
 	var round_screen = $"UI/Round Screen"
 	var round_label = $"UI/Round Screen/RoundLabel"
-
+	
+	play_sfx(new_round)
 	round_label.text = "Wave %d" % (Global.rounds_completed + 1)
-
 	round_screen.visible = true
 	round_screen.modulate.a = 0.0
 	round_screen.scale = Vector2(0.8, 0.8)
@@ -151,7 +171,8 @@ func _update_hint_cooldown(delta: float) -> void:
 func play_hint_animation() -> void:
 	if not current_entity:
 		return
-
+	
+	play_sfx(scan_sound)
 	var outline_sprite = current_entity.outline
 	var tween = create_tween()
 	tween.tween_property(outline_sprite, "modulate:a", hint_max_alpha, 0.2)
@@ -160,6 +181,7 @@ func play_hint_animation() -> void:
 
 func trigger_minigame(type: int):
 	Global.minigame_mode = true
+	play_sfx(minigame_start)
 	var minigame = minigame_scene.instantiate()
 	ui_layer.add_child(minigame)
 	var player_cursor = get_tree().get_first_node_in_group("PlayerCursor")
@@ -172,6 +194,7 @@ func trigger_minigame(type: int):
 
 func _on_minigame_ended(minigame_instance: Node, player_cursor: Node) -> void:
 	Global.minigame_mode = false
+	play_sfx(minigame_end)
 	minigame_instance.remove_child(player_cursor)
 	player_original_parent.add_child(player_cursor)
 	minigame_instance.queue_free()

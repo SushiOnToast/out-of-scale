@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://dhby3s6wpwx4t" path="res://themes/button.tres" id="2_ny0ke"]
 [ext_resource type="Texture2D" uid="uid://c440l78d43j3i" path="res://graphics/UI/menu_click.png" id="3_iysyy"]
 [ext_resource type="Texture2D" uid="uid://d2byevc4x7urn" path="res://graphics/UI/menu.png" id="4_ny0ke"]
+[ext_resource type="AudioStream" uid="uid://bmgq5quruas1k" path="res://audio/music/start_screen.ogg" id="7_svcqa"]
 
 [node name="Menu" type="Control" unique_id=1001180836]
 layout_mode = 3
@@ -100,5 +101,9 @@ modulate = Color(1, 1, 1, 0)
 click_texture = ExtResource("3_iysyy")
 idle_texture = ExtResource("4_ny0ke")
 menu = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1095096094]
+stream = ExtResource("7_svcqa")
+autoplay = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

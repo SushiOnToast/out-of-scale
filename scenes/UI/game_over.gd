@@ -5,6 +5,7 @@ var score_active = false
 
 func _ready() -> void:
 	$Score.text = "Cured: " + str(Global.patients_cured) + " / " + str(Global.patients_required)
+	$AudioStreamPlayer.play()
 	
 	var tween = create_tween()
 	tween.tween_property($GameOverLabel, "modulate:a", 1, 1)
