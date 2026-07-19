@@ -50,6 +50,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1170285172]
 stream = ExtResource("6_3e5l4")
+volume_db = -20.0
 
 [connection signal="mouse_entered" from="DragArea/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="DragArea/Area2D" to="." method="_on_area_2d_mouse_exited"]

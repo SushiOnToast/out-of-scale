@@ -225,6 +225,8 @@ color = Color(0, 0, 0, 1)
 
 [node name="TypewriterSound" type="AudioStreamPlayer" parent="." unique_id=430764951]
 stream = ExtResource("7_5tjt8")
+volume_db = -20.0
 
 [node name="VHSPlayer" type="AudioStreamPlayer" parent="." unique_id=810486200]
 stream = ExtResource("8_s5t8c")
+volume_db = -5.0

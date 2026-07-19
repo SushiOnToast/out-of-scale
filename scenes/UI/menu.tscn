@@ -104,6 +104,7 @@ menu = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1095096094]
 stream = ExtResource("7_svcqa")
+volume_db = -5.0
 autoplay = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
