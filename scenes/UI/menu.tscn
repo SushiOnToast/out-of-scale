@@ -74,7 +74,7 @@ grow_vertical = 2
 theme = ExtResource("2_ny0ke")
 theme_override_colors/font_color = Color(0.7261901, 0.670666, 0.5593685, 1)
 theme_override_font_sizes/font_size = 10
-text = "before the time runs out..."
+text = "before its too late..."
 horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="." unique_id=276639357]

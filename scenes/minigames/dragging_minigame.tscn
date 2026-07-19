@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://begibfqw8x0ex" path="res://scenes/minigames/drag_object.tscn" id="3_8pqvq"]
 [ext_resource type="Texture2D" uid="uid://m1vbs212oyc4" path="res://graphics/UI/minigames/dragging/indicator.png" id="4_1trpw"]
 [ext_resource type="FontFile" uid="uid://dpjb8fmf248em" path="res://fonts/pixelify_sans/PixelifySans-VariableFont_wght.ttf" id="5_3e5l4"]
-[ext_resource type="AudioStream" uid="uid://dfns16egbtomw" path="res://audio/sfx/dragging_game.wav" id="6_3e5l4"]
+[ext_resource type="AudioStream" uid="uid://b6mqv5p63j37m" path="res://audio/sfx/draggging_game.wav" id="6_3e5l4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d5hc8"]
 radius = 14.035668
