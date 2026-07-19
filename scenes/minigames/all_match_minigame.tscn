@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b20chv1s2hogr" path="res://scenes/minigames/all_match_node.tscn" id="1_3qviy"]
 [ext_resource type="Script" uid="uid://b0safndm34ldr" path="res://scenes/minigames/all_match_minigame.gd" id="1_q3r25"]
+[ext_resource type="FontFile" uid="uid://dpjb8fmf248em" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="3_2n5aa"]
+[ext_resource type="Texture2D" uid="uid://du8cafpu8h6od" path="res://graphics/UI/minigames/all_match/icon_3.png" id="4_gaysw"]
 
 [node name="AllMatchMinigame" type="CenterContainer" unique_id=2045674737]
 anchors_preset = 8
@@ -11,11 +13,12 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_q3r25")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=553412510]
-position = Vector2(-19, -19)
+position = Vector2(9, -19)
 
 [node name="AllMatchNode" parent="Node2D" unique_id=346011071 instance=ExtResource("1_3qviy")]
 
@@ -42,3 +45,28 @@ position = Vector2(19, 38)
 
 [node name="AllMatchNode9" parent="Node2D" unique_id=1634357178 instance=ExtResource("1_3qviy")]
 position = Vector2(38, 38)
+
+[node name="Label2" type="Label" parent="Node2D" unique_id=1054152254]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.0
+offset_top = 18.0
+offset_right = -3.0
+offset_bottom = 33.0
+grow_horizontal = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_2n5aa")
+theme_override_font_sizes/font_size = 7
+text = "Target"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Node2D" unique_id=760151016]
+offset_left = -59.0
+offset_top = 5.0
+offset_right = -43.0
+offset_bottom = 21.0
+texture = ExtResource("4_gaysw")
+metadata/_edit_use_anchors_ = true

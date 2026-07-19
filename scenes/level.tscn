@@ -966,6 +966,10 @@ text = "Round 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureButton" type="TextureButton" parent="UI" unique_id=1963792027]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="trigger_minigame" from="Tools/ScaleUp" to="." method="_on_scale_up_trigger_minigame"]
 [connection signal="trigger_minigame" from="Tools/ScaleDown" to="." method="_on_scale_down_trigger_minigame"]
 [connection signal="pressed" from="UI/ConfirmButton" to="." method="_on_confirm_button_pressed"]

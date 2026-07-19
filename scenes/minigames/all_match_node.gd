@@ -7,7 +7,7 @@ var textures = [
 	preload("res://graphics/UI/minigames/all_match/icon_4.png"),
 ]
 
-var target_texture = textures[2]
+var target_texture
 var index = randi_range(0, 3)
 var active = false
 var solved = false
