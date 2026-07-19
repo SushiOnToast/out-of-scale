@@ -2,8 +2,8 @@ extends Control
 
 func _ready() -> void:
 	var tween = create_tween()
-	tween.tween_property($MenuScreen, "modulate:a", 1, 1.5)
-	tween.tween_interval(1.5)
+	tween.tween_property($MenuScreen, "modulate:a", 1, 1.25)
+	tween.tween_interval(1.25)
 	tween.tween_property($Label1, "modulate:a", 1, 1)
 	tween.tween_property($Label2, "modulate:a", 1, 1)
 	tween.tween_interval(0.5)

@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://dhby3s6wpwx4t"]
 
-[ext_resource type="FontFile" uid="uid://dpjb8fmf248em" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="1_dpjbf"]
+[ext_resource type="FontFile" uid="uid://dpjb8fmf248em" path="res://fonts/pixelify_sans/PixelifySans-VariableFont_wght.ttf" id="1_dpjbf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klq6b"]
 content_margin_left = 4.0
@@ -36,8 +36,10 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c41q"]
-content_margin_left = 4.0
-content_margin_right = 4.0
+content_margin_left = 5.0
+content_margin_top = 1.0
+content_margin_right = 5.0
+content_margin_bottom = 1.0
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 1
 border_width_top = 1
@@ -50,8 +52,10 @@ corner_radius_bottom_left = 1
 corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olg7q"]
-content_margin_left = 4.0
-content_margin_right = 4.0
+content_margin_left = 5.0
+content_margin_top = 1.0
+content_margin_right = 5.0
+content_margin_bottom = 1.0
 bg_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 1
 corner_radius_top_right = 1

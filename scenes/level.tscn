@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d22yxna7yye57" path="res://scenes/Tools/scale_down.tscn" id="4_mx8sn"]
 [ext_resource type="Theme" uid="uid://dhby3s6wpwx4t" path="res://themes/button.tres" id="5_b121j"]
 [ext_resource type="FontFile" uid="uid://dbq7pcp2vgx40" path="res://fonts/Tiny5-Regular.ttf" id="7_b121j"]
-[ext_resource type="FontFile" uid="uid://dpjb8fmf248em" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="7_klq6b"]
+[ext_resource type="FontFile" uid="uid://dpjb8fmf248em" path="res://fonts/pixelify_sans/PixelifySans-VariableFont_wght.ttf" id="7_klq6b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klq6b"]
 texture = ExtResource("2_2r41h")

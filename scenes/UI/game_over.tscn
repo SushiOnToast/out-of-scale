@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://36eqjnneeryj" path="res://scenes/UI/game_over.gd" id="1_njkqv"]
 [ext_resource type="PackedScene" uid="uid://xftl8kd7g1af" path="res://scenes/player.tscn" id="2_a2ham"]
+[ext_resource type="FontFile" uid="uid://dpjb8fmf248em" path="res://fonts/pixelify_sans/PixelifySans-VariableFont_wght.ttf" id="2_uw231"]
 [ext_resource type="Theme" uid="uid://dhby3s6wpwx4t" path="res://themes/button.tres" id="2_yv7mv"]
+[ext_resource type="FontFile" uid="uid://c5816syd3cwf6" path="res://fonts/pixelify_sans/PixelifySans-Bold.ttf" id="3_4eny6"]
 [ext_resource type="Texture2D" uid="uid://c440l78d43j3i" path="res://graphics/UI/menu_click.png" id="3_yv7mv"]
+[ext_resource type="FontFile" uid="uid://dbq7pcp2vgx40" path="res://fonts/Tiny5-Regular.ttf" id="4_1t5eu"]
 [ext_resource type="Texture2D" uid="uid://d2byevc4x7urn" path="res://graphics/UI/menu.png" id="4_r5ffl"]
 
 [node name="GameOver" type="Control" unique_id=1855554363]
@@ -24,63 +27,87 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="." unique_id=1629132330]
+[node name="GameOverLabel" type="RichTextLabel" parent="." unique_id=1085653802]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_top = 35.0
-offset_right = 20.0
-offset_bottom = 23.0
+offset_left = -86.51419
+offset_top = 37.000004
+offset_right = 86.51419
+offset_bottom = 90.152725
 grow_horizontal = 2
 rotation = -0.0023086814
+theme_override_colors/default_color = Color(0.93333334, 0.9137255, 0.8745098, 1)
+theme_override_fonts/normal_font = ExtResource("2_uw231")
+theme_override_fonts/bold_font = ExtResource("3_4eny6")
+theme_override_font_sizes/normal_font_size = 27
+theme_override_font_sizes/bold_font_size = 19
+bbcode_enabled = true
 text = "Game Over!"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="Label" unique_id=362065374]
+[node name="Score" type="RichTextLabel" parent="." unique_id=830503750]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_top = 20.0
-offset_right = 20.0
-offset_bottom = 23.0
+anchor_bottom = 0.5
+offset_left = -58.841255
+offset_top = -25.0
+offset_right = 58.841248
+offset_bottom = -11.0
 grow_horizontal = 2
+grow_vertical = 2
 rotation = -0.0023086814
-theme_override_font_sizes/font_size = 11
+theme_override_colors/default_color = Color(0.80329394, 0.75511324, 0.6589205, 1)
+theme_override_fonts/normal_font = ExtResource("4_1t5eu")
+theme_override_font_sizes/normal_font_size = 12
 text = "Score"
 horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="RetryButton" type="Button" parent="." unique_id=302627962]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
+anchor_bottom = 1.0
 offset_left = -30.5
-offset_top = 93.0
+offset_top = -82.0
 offset_right = 30.5
-offset_bottom = 116.0
+offset_bottom = -67.0
 grow_horizontal = 2
+grow_vertical = 0
 theme = ExtResource("2_yv7mv")
 text = "Play Again"
 
 [node name="MenuButton" type="Button" parent="." unique_id=989959703]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.5
+offset_left = -40.0
 offset_top = 115.0
-offset_right = 20.5
-offset_bottom = 31.0
+offset_right = 40.0
+offset_bottom = 130.0
 grow_horizontal = 2
+grow_vertical = 0
 theme = ExtResource("2_yv7mv")
 text = "Back to Menu
 "
 
 [node name="Player" parent="." unique_id=1200589926 instance=ExtResource("2_a2ham")]
+visible = false
+modulate = Color(1, 1, 1, 0)
 click_texture = ExtResource("3_yv7mv")
 idle_texture = ExtResource("4_r5ffl")
 menu = true
