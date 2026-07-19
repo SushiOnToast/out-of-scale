@@ -17,6 +17,7 @@ func _ready() -> void:
 	tween.tween_property($Trigger, "modulate:a", 0, 0.5)
 	
 	tween.tween_property($VHS, "modulate:a", 1, 2)
+	tween.parallel().tween_callback(func(): $VHSPlayer.play())
 	tween.tween_interval(2)
 	
 	tween.tween_property($Control, "modulate:a", 0, 0.5)
@@ -42,13 +43,19 @@ func _process(delta: float) -> void:
 		typewriter($Text1, delta, text1_visible_characters, 0.1)
 	if text2_active:
 		typewriter($Text2, delta, text2_visible_characters, 0.075)
-		
+
 	if nav_menu:
 		get_tree().change_scene_to_file("res://scenes/UI/menu.tscn")
-			
-func typewriter(text: RichTextLabel, delta: float, visible_characters, multiplier:float = 1):
+
+func typewriter(text: RichTextLabel, delta: float, visible_characters, multiplier: float = 1):
 	if text.visible_ratio < 1:
+		if not $TypewriterSound.playing:
+			$TypewriterSound.play()
 		text.visible_ratio += multiplier * delta
+	else:
+		if $TypewriterSound.playing:
+			$TypewriterSound.stop()
+
 	if visible_characters != text.visible_characters:
 		visible_characters = text.visible_characters
 
