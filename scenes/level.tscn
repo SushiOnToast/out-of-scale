@@ -914,14 +914,14 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -79.0
-offset_top = -6.5
+offset_left = -51.0
+offset_top = -8.5
 offset_right = -30.0
 offset_bottom = 8.5
 grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("5_b121j")
-text = "Confirm"
+text = "Discharge"
 
 [node name="Controls" type="RichTextLabel" parent="UI" unique_id=170691823]
 anchors_preset = -1
@@ -981,12 +981,12 @@ anchors_preset = -1
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 30.0
-offset_top = -9.25
-offset_right = 64.0
-offset_bottom = 5.75
+offset_top = -8.5
+offset_right = 36.0
+offset_bottom = 8.5
 grow_vertical = 2
 theme = ExtResource("5_b121j")
-text = "Hint"
+text = "Scan"
 
 [node name="Player" parent="UI" unique_id=274464145 instance=ExtResource("1_2q6dc")]
 position = Vector2(131, 66)

@@ -62,7 +62,7 @@ func transition_to_next_entity() -> void:
 func update_timer_display() -> void:
 	$UI/TimerLabel.text = "Time: %d" % ceil(Global.time_remaining)
 	$UI/ScoreLabel.text = "%d / %d cured" % [Global.patients_cured, Global.patients_required]
-	$UI/RoundNumber.text = "Round %d" % (Global.rounds_completed + 1)
+	$UI/RoundNumber.text = "Wave %d" % (Global.rounds_completed + 1)
 	
 func on_round_failed() -> void:
 	Global.round_active = false
@@ -72,7 +72,7 @@ func on_round_failed() -> void:
 func on_round_success() -> void:
 	Global.round_active = false
 	Global.rounds_completed += 1
-	print("Round complete! Moving to round ", Global.rounds_completed + 1)
+	print("Wave complete! Recieving wave ", Global.rounds_completed + 1)
 	show_round_screen()
 
 func _on_confirm_button_pressed() -> void:
@@ -93,7 +93,7 @@ func _show_initial_round_screen() -> void:
 	var round_screen = $"UI/Round Screen"
 	var round_label = $"UI/Round Screen/RoundLabel"
 
-	round_label.text = "Round %d" % (Global.rounds_completed + 1)
+	round_label.text = "Wave %d" % (Global.rounds_completed + 1)
 	round_screen.visible = true
 	round_screen.modulate.a = 1.0
 	round_screen.scale = Vector2.ONE
@@ -107,7 +107,7 @@ func show_round_screen() -> void:
 	var round_screen = $"UI/Round Screen"
 	var round_label = $"UI/Round Screen/RoundLabel"
 
-	round_label.text = "Round %d" % (Global.rounds_completed + 1)
+	round_label.text = "Wave %d" % (Global.rounds_completed + 1)
 
 	round_screen.visible = true
 	round_screen.modulate.a = 0.0
@@ -139,11 +139,11 @@ func _update_hint_cooldown(delta: float) -> void:
 	if hint_cooldown_remaining > 0:
 		hint_cooldown_remaining -= delta
 		$UI/HintButton.disabled = true
-		$UI/HintButton.text = "Hint (%d)" % ceil(hint_cooldown_remaining)
+		$UI/HintButton.text = "Scan (%d)" % ceil(hint_cooldown_remaining)
 	else:
 		hint_cooldown_remaining = 0.0
 		$UI/HintButton.disabled = false
-		$UI/HintButton.text = "Hint"
+		$UI/HintButton.text = "Scan"
 
 func play_hint_animation() -> void:
 	if not current_entity:
