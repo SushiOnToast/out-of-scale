@@ -6,7 +6,7 @@ func _ready() -> void:
 	tween.tween_interval(1.5)
 	tween.tween_property($Label1, "modulate:a", 1, 1)
 	tween.tween_property($Label2, "modulate:a", 1, 1)
-	tween.tween_interval(1)
+	tween.tween_interval(0.5)
 	tween.tween_callback(func(): $StartButton.show())
 	tween.tween_property($StartButton, "modulate:a", 1, 0.5)
 	tween.tween_callback(func(): $Player.show())
